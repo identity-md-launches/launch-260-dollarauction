@@ -1,0 +1,22 @@
+{
+  "kind": "evm_project",
+  "token": {
+    "contract": "LaunchToken",
+    "name": "Escalation",
+    "symbol": "ESCL",
+    "decimals": 18
+  },
+  "contracts": [
+    {
+      "contract": "DollarAuction",
+      "constructorArgs": ["$token"]
+    }
+  ],
+  "pool": {
+    "pairedCurrency": "0x0000000000000000000000000000000000000000",
+    "fee": 3000,
+    "tickSpacing": 60,
+    "initialPrice": "79228162514264337593543950336"
+  },
+  "notes": "Sepolia-only game-theory demo: this is a test toy with no real value. Bidding past the prize loses ESCL by design. LaunchToken has no constructor arguments. DollarAuction uses ESCL as its immutable currency, needs no initial token balance or initialization calls, and has no owner, admin or upgrade path. Players obtain ESCL by swapping Sepolia ETH in the factory-seeded launch pool, which has no hook. Where the pinned policy specifies an opening market cap, services derive the effective opening price from that policy. Policy and signed artifact linkage are supplied by services."
+}
